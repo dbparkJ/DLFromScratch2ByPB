@@ -25,7 +25,7 @@ def rename_files_and_log(source_directory, target_directory, zip_filename):
         for base_name in base_names:
             png_file = base_name + '.png'
             txt_file = base_name + '.txt'
-            new_base_name = f"porthall_2_{number}"
+            new_base_name = f"AI_Hub_pothole_4_{number}"
 
             # Copy and rename .png file if it exists
             if os.path.exists(os.path.join(source_directory, png_file)):
@@ -49,7 +49,7 @@ def rename_files_and_log(source_directory, target_directory, zip_filename):
 
 
 # Example usage
-source_directory_path = r'D:\train3'  # 원본 폴더 경로를 실제 경로로 변경하세요
-target_directory_path = r'D:\train3\ouput'  # 대상 폴더 경로를 실제 경로로 변경하세요
-zip_filename = 'portholl_AI_Hub_2.zip'  # 압축 파일명을 원하는 대로 변경하세요
+source_directory_path = r'D:\포트홀2'  # 원본 폴더 경로를 실제 경로로 변경하세요
+target_directory_path = r'D:\포트홀2\ouput'  # 대상 폴더 경로를 실제 경로로 변경하세요
+zip_filename = 'portholl_AI_Hub_4.zip'  # 압축 파일명을 원하는 대로 변경하세요
 rename_files_and_log(source_directory_path, target_directory_path, zip_filename)

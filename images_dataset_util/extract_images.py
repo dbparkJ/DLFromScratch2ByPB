@@ -4,7 +4,7 @@ import shutil
 from pathlib import Path
 
 
-def copy_random_files(input_folder, output_image_folder, output_txt_folder, train_file_path, num_files=461):
+def copy_random_files(input_folder, output_image_folder, output_txt_folder, train_file_path, num_files=167):
     # 입력 폴더의 경로 설정
     input_folder = Path(input_folder)
     output_image_folder = Path(output_image_folder)
@@ -50,9 +50,9 @@ def copy_random_files(input_folder, output_image_folder, output_txt_folder, trai
 
 
 # 사용 예시
-input_folder = r'D:\val'
-output_image_folder = r'D:\val\images'
-output_txt_folder = r'D:\val\labels'
-train_file_path = r'D:\val\train.txt'
+input_folder = r'D:\포트홀'
+output_image_folder = r'D:\포트홀\images'
+output_txt_folder = r'D:\포트홀\labels'
+train_file_path = r'D:\포트홀\train.txt'
 
 copy_random_files(input_folder, output_image_folder, output_txt_folder, train_file_path)
