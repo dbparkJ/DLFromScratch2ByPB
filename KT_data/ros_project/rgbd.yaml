@@ -1,0 +1,7 @@
+/oak:
+    camera_i_nn_type: none
+    stereo_i_subpixel: true
+    rgb_i_resolution: 4K
+    rgb_i_fps: 30.0
+    rgb_i_width: 3840
+    rgb_i_height: 2160

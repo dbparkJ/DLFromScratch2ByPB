@@ -57,9 +57,9 @@ def save_frames_from_videos(input_folder, output_folder, frame_rate, compression
     print(f"Frames extracted and saved in '{output_folder}'.")
 
 # 입력 폴더와 출력 폴더 경로, 초당 저장할 프레임 수와 압축률을 사용자로부터 입력받음
-input_folder = r"C:\Users\JM\Desktop\2024.10.14\data"
-output_folder = r"C:\Users\JM\Desktop\2024.10.14\data\output"
-frame_rate = 3
+input_folder = r"C:\Users\JM\Downloads\email"
+output_folder = r"C:\Users\JM\Downloads\email\video_2_images"
+frame_rate = 5
 compression = 3  # 압축률 설정 (0-9, 숫자가 클수록 압축률이 높아짐)
 
 # 여러 동영상을 멀티쓰레딩으로 처리

@@ -4,7 +4,7 @@ import random
 import shutil
 
 # 데이터셋의 최상위 경로 설정
-root_path = r"C:\Users\JM\Desktop\data_version2.1"  # 전체 폴더가 있는 경로로 변경
+root_path = r"C:\Users\JM\Desktop\data_version2.3_output"  # 전체 폴더가 있는 경로로 변경
 
 # train/valid/test 폴더 경로 설정
 train_img_dir = os.path.join(root_path, 'images/train')
@@ -155,4 +155,3 @@ with open(log_file_path, 'w') as log_file:
         log_file.write(f"Class {class_id}: {count} 개\n")
 
 print(f"각 폴더별로 파일이 train/valid/test로 {train_ratio:.1f}:{valid_ratio:.1f}:{test_ratio:.1f} 비율로 분할되고, 새로운 이름으로 변경되었습니다! 로그 파일이 {log_file_path}에 생성되었습니다.")
-
