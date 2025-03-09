@@ -23,7 +23,7 @@ def move_and_rename_files(input_folder, output_folder):
 
 
 # 사용 예시
-input_folder = r'C:\Users\JM\Desktop\data_version2.3'
-output_folder = r'C:\Users\JM\Desktop\data_version2.3_output'
+input_folder = r'C:\Users\JMP\Desktop\data\4.1'
+output_folder = r'C:\Users\JMP\Desktop\data\data'
 
 move_and_rename_files(input_folder, output_folder)

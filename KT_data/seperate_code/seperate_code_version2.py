@@ -4,7 +4,7 @@ import random
 import shutil
 
 # 데이터셋의 최상위 경로 설정
-root_path = r"C:\Users\JM\Desktop\data_version2.1"  # 전체 폴더가 있는 경로로 변경
+root_path = r"C:\Users\JMP\Downloads\data"  # 전체 폴더가 있는 경로로 변경
 
 # train/valid/test 폴더 경로 설정
 train_img_dir = os.path.join(root_path, 'images/train')
@@ -28,19 +28,12 @@ os.makedirs(test_lbl_dir, exist_ok=True)
 # 지원하는 이미지 확장자 리스트
 supported_image_formats = ('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.gif')
 
-# 고유 파일 이름을 생성하는 함수
-def get_new_filename(index):
-    return f"{index:06d}"
-
-# 새로운 파일명 부여를 위한 인덱스
-file_index = 1
-
-# 각 클래스별로 개수를 저장할 딕셔너리
+# 각 클래스별 개수를 저장할 딕셔너리
 train_class_count = {}
 valid_class_count = {}
 test_class_count = {}
 
-# 각 폴더에서 클래스 개수 세는 함수
+# 각 폴더에서 클래스 개수를 세는 함수
 def count_classes_in_labels(label_dir, class_count_dict):
     for label_file in os.listdir(label_dir):
         label_path = os.path.join(label_dir, label_file)
@@ -86,14 +79,9 @@ for img_name, lbl_name in train_pairs:
     img_src = os.path.join(root_path, img_name)
     lbl_src = os.path.join(root_path, lbl_name)
 
-    # 새로운 파일명 생성
-    new_filename = get_new_filename(file_index)
-    file_index += 1
-
-    # 새로운 파일 경로 설정
-    img_ext = os.path.splitext(img_name)[1]
-    new_img_path = os.path.join(train_img_dir, new_filename + img_ext)
-    new_lbl_path = os.path.join(train_lbl_dir, new_filename + '.txt')
+    # 원래 파일명 그대로 사용
+    new_img_path = os.path.join(train_img_dir, img_name)
+    new_lbl_path = os.path.join(train_lbl_dir, lbl_name)
 
     # 파일 이동
     shutil.move(img_src, new_img_path)
@@ -104,14 +92,9 @@ for img_name, lbl_name in valid_pairs:
     img_src = os.path.join(root_path, img_name)
     lbl_src = os.path.join(root_path, lbl_name)
 
-    # 새로운 파일명 생성
-    new_filename = get_new_filename(file_index)
-    file_index += 1
-
-    # 새로운 파일 경로 설정
-    img_ext = os.path.splitext(img_name)[1]
-    new_img_path = os.path.join(valid_img_dir, new_filename + img_ext)
-    new_lbl_path = os.path.join(valid_lbl_dir, new_filename + '.txt')
+    # 원래 파일명 그대로 사용
+    new_img_path = os.path.join(valid_img_dir, img_name)
+    new_lbl_path = os.path.join(valid_lbl_dir, lbl_name)
 
     # 파일 이동
     shutil.move(img_src, new_img_path)
@@ -122,14 +105,9 @@ for img_name, lbl_name in test_pairs:
     img_src = os.path.join(root_path, img_name)
     lbl_src = os.path.join(root_path, lbl_name)
 
-    # 새로운 파일명 생성
-    new_filename = get_new_filename(file_index)
-    file_index += 1
-
-    # 새로운 파일 경로 설정
-    img_ext = os.path.splitext(img_name)[1]
-    new_img_path = os.path.join(test_img_dir, new_filename + img_ext)
-    new_lbl_path = os.path.join(test_lbl_dir, new_filename + '.txt')
+    # 원래 파일명 그대로 사용
+    new_img_path = os.path.join(test_img_dir, img_name)
+    new_lbl_path = os.path.join(test_lbl_dir, lbl_name)
 
     # 파일 이동
     shutil.move(img_src, new_img_path)
@@ -154,5 +132,4 @@ with open(log_file_path, 'w') as log_file:
     for class_id, count in sorted(test_class_count.items()):
         log_file.write(f"Class {class_id}: {count} 개\n")
 
-print(f"각 폴더별로 파일이 train/valid/test로 {train_ratio:.1f}:{valid_ratio:.1f}:{test_ratio:.1f} 비율로 분할되고, 새로운 이름으로 변경되었습니다! 로그 파일이 {log_file_path}에 생성되었습니다.")
-
+print(f"각 폴더별로 파일이 train/valid/test로 {train_ratio:.1f}:{valid_ratio:.1f}:{test_ratio:.1f} 비율로 분할되었습니다. 기존 파일명을 유지하며 이동이 완료되었습니다! 로그 파일이 {log_file_path}에 생성되었습니다.")

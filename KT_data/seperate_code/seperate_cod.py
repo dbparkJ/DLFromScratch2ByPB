@@ -3,7 +3,7 @@ import random
 import shutil
 
 # 데이터셋의 최상위 경로 설정
-root_path = r"/KT_data/seperate_code/original_data"  # 전체 폴더가 있는 경로로 변경
+root_path = r"C:\Users\JMP\Downloads\data"  # 전체 폴더가 있는 경로로 변경
 
 # train/valid/test 폴더 경로 설정
 train_img_dir = os.path.join(root_path, 'images/train')
